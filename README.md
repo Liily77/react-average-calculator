@@ -33,6 +33,8 @@ This mini React project was developed in two phases. It is a single-page applica
 
 🖼️ Diagram: `Diagram-phase1.PNG`
 
+![Phase 1 Diagram](Diagram-phase1.PNG)
+
 ---
 
 ## ⚙️ Phase 2 – Logic and Interactivity
@@ -53,6 +55,7 @@ This mini React project was developed in two phases. It is a single-page applica
 
 🖼️ Diagram: `Diagram-phase2.PNG`
 
+![Phase 2 Diagram](Diagram-phase2.PNG)
 ---
 
 ## 🧪 Technologies Used
