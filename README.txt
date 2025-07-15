@@ -65,33 +65,31 @@ This mini React project was developed in two phases. It is a single-page applica
 
 ## 📎 Included Files
 
-- `index.html` – full working app with interface & logic
-- `Diagram-phase1.PNG` – component hierarchy (Phase 1)
-- `Diagram-phase2.PNG` – data flow & state (Phase 2)
+- `index.html` – full working app with interface & logic  
+- `Diagram-phase1.PNG` – component hierarchy (Phase 1)  
+- `Diagram-phase2.PNG` – data flow & state (Phase 2)  
 - `README.txt` – this document
 
 ---
 
-## 🌐 Hosting URL (optional)
+## 🌐 Hosting URL
 
-If hosted online:  
-`https://your-url-if-hosted.com`  
-Otherwise, open `index.html` locally.
+🖥️ Live Demo:  
+**https://lydianeghad.alwaysdata.net/react-average-calculator/index.html**
 
 ---
 
 ## ✅ How to Use
 
-1. Open `index.html` in your browser
-2. Enter two numbers
-3. Click **Calculate Average**
+1. Open the link or the local `index.html` in your browser  
+2. Enter two numbers  
+3. Click **Calculate Average**  
 4. View the result displayed dynamically
 
 ---
 
 ## 🚧 Notes
 
-- Built without `npm`, `create-react-app`, or modules
-- 100% client-side: React, JSX, and Babel via CDN
+- Built without `npm`, `create-react-app`, or modules  
+- 100% client-side: React, JSX, and Babel via CDN  
 - Mobile responsive with minimalist styling
-
