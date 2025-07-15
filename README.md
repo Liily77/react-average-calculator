@@ -6,6 +6,14 @@ This mini React project was developed in two phases. It is a single-page applica
 
 ---
 
+## 🌐 Hosting URL
+
+🖥️ Live Demo:  
+**https://lydianeghad.alwaysdata.net/react-average-calculator/index.html**
+
+---
+
+
 ## 🧩 Phase 1 – Interface Only (No Functionality)
 
 **Objective**: Build the full interface without logic.
@@ -72,12 +80,6 @@ This mini React project was developed in two phases. It is a single-page applica
 
 ---
 
-## 🌐 Hosting URL
-
-🖥️ Live Demo:  
-**https://lydianeghad.alwaysdata.net/react-average-calculator/index.html**
-
----
 
 ## ✅ How to Use
 
