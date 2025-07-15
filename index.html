@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Average Calculator 🧮</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: url('https://images.pexels.com/photos/256369/pexels-photo-256369.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 50px;
+      position: relative;
+      z-index: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      z-index: -1;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      width: 350px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.01);
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      margin: 12px 0;
+      padding: 10px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="number"]:focus {
+      border-color: #64b5f6;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #64b5f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #42a5f5;
+      transform: scale(1.03);
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    strong {
+      color: #00796b;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+
+  // Parent component: App
+  function App() {
+    const { useState } = React;
+
+    const [number1, setNumber1] = useState("");
+    const [number2, setNumber2] = useState("");
+    const [average, setAverage] = useState("");
+
+    const calculateAverage = () => {
+      const n1 = parseFloat(number1);
+      const n2 = parseFloat(number2);
+      if (!isNaN(n1) && !isNaN(n2)) {
+        const result = (n1 + n2) / 2;
+        setAverage(result.toFixed(2));
+      } else {
+        setAverage("Invalid input");
+      }
+    };
+
+    return (
+      <div className="container">
+        <h1>Average Calculator 🧮</h1>
+
+        
+        <NumberInput
+          label="First Number"
+          value={number1}
+          onChange={(e) => setNumber1(e.target.value)}
+        />
+
+        <NumberInput
+          label="Second Number"
+          value={number2}
+          onChange={(e) => setNumber2(e.target.value)}
+        />
+
+        <CalculateButton
+          label="Calculate Average"
+          onClick={calculateAverage}
+        />
+
+        <ResultDisplay value={average} />
+      </div>
+    );
+  }
+
+  // Child component: NumberInput
+  function NumberInput(props) {
+    return (
+      <div>
+        <label>{props.label}</label>
+        <input
+          type="number"
+          value={props.value}
+          onChange={props.onChange}
+        />
+      </div>
+    );
+  }
+
+  // Child component: CalculateButton
+  function CalculateButton(props) {
+    return (
+      <div>
+        <button onClick={props.onClick}>{props.label}</button>
+      </div>
+    );
+  }
+
+  // Child component: ResultDisplay
+  function ResultDisplay(props) {
+    let resultColor = "#333"; // Default gray
+
+    if (props.value === "Invalid input") {
+      resultColor = "#c62828"; // Red
+    } else if (props.value) {
+      resultColor = "#00796b"; // Green
+    }
+
+    return (
+      <div>
+        <p
+          style={{
+            color: resultColor,
+            fontSize: "18px",
+            fontWeight: "bold"
+          }}
+        >
+          Result: <strong>{props.value}</strong>
+        </p>
+      </div>
+    );
+  }
+
+  // Mount the App
+  ReactDOM.render(<App />, document.getElementById("root"));
+
+</script>
+
+
+</body>
+</html>
